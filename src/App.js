@@ -11,16 +11,17 @@ import {
   useParams,
 } from "react-router-dom";
 import ShopPage from "./shop/shop";
-
+import { Header } from "./header/header.component";
 function App() {
   return (
-    <div>
+    <BrowserRouter>
+      <Header></Header>
       <Routes>
-        <Route path="/" element={<HomePage />}>
-          <Route path="/shop" element={<ShopPage></ShopPage>}></Route>
-        </Route>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/shop" element={<ShopPage></ShopPage>}></Route>
+        <Route path="/*"></Route>
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 
